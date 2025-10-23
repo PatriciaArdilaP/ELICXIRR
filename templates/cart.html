@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Carrito de compras{% endblock %}
+
+{% block content %}
+<section class="cart-page">
+  <div class="container">
+    <h1>Carrito de compras</h1>
+
+    {% if not cart %}
+      <div class="cart-empty">
+        Tu carrito está vacío.
+        <div class="cart-actions">
+          <a class="btn btn--accent" href="{{ url_for('tienda') }}">Ir a la tienda</a>
+        </div>
+      </div>
+    {% else %}
+      <div class="cart-table-wrap">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in cart %}
+            <tr>
+              <td>{{ p.name }}</td>
+              <td>${{ "{:,.0f}".format(p.price) }}</td>
+              <td>{{ p.qty }}</td>
+              <td>${{ "{:,.0f}".format(p.price * p.qty) }}</td>
+              <td>
+                <a href="{{ url_for('remove_from_cart', id=p.id) }}" class="link danger">Quitar</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <strong>${{ "{:,.0f}".format(total) }}</strong>
+        </div>
+
+        <div class="cart-actions">
+            <a class="btn" href="{{ url_for('tienda') }}">Seguir comprando</a>
+            <a class="btn btn--accent" href="{{ url_for('checkout') }}">Finalizar compra</a>
+        </div>
+    </div>
+
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

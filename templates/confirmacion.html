@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Confirmación de compra{% endblock %}
+
+{% block content %}
+<section class="confirm-page">
+  <div class="container confirm-card">
+    
+    <!-- Encabezado de confirmación -->
+    <div class="confirm-head">
+      <div class="confirm-check">✔</div>
+      <div>
+        <h1 class="confirm-title">¡Gracias por tu compra, {{ order.nombre }}!</h1>
+        <p class="confirm-subtitle">
+          Tu pedido fue registrado correctamente y será enviado a:
+          <strong>{{ order.direccion }}</strong>
+        </p>
+      </div>
+    </div>
+
+    <p class="confirm-info">
+      Te enviaremos los detalles del pedido al correo:
+      <strong>{{ order.email }}</strong>
+    </p>
+
+    <!-- Resumen del pedido -->
+    {% if order and "items" in order and order["items"] %}
+      <h3 class="form-block-title">Resumen del pedido</h3>
+      <ul class="summary-items">
+        {% for item in order["items"] %}
+        <li class="summary-item">
+          <img src="{{ url_for('static', filename=item.img) }}" alt="{{ item.name }}" class="summary-img">
+          <div class="summary-info">
+            <span class="summary-name">{{ item.name }}</span>
+            <span class="summary-qtyprice">{{ item.qty }} × ${{ "{:,.0f}".format(item.price) }}</span>
+          </div>
+          <span class="summary-subtotal">
+            ${{ "{:,.0f}".format(item.price * item.qty) }}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <div class="summary-row total">
+        <span>Total:</span>
+        <span class="money">${{ "{:,.0f}".format(order.total) }}</span>
+      </div>
+    {% else %}
+      <p class="confirm-empty">No se encontraron productos en tu pedido.</p>
+    {% endif %}
+
+    <!-- Botón para volver a la tienda -->
+    <div class="confirm-actions">
+      <a href="{{ url_for('tienda') }}" class="btn btn--accent">Volver a la tienda</a>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+
+

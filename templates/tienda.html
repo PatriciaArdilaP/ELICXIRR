@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Tienda • Maquillaje sin género{% endblock %}
+
+{% block hero %}
+<section class="hero hero--shop" aria-label="Portada de la tienda">
+  <div class="hero__media">
+    <img
+      class="hero__img"
+      src="{{ url_for('static', filename='img/productos_tienda.jpg') }}"
+      alt="Productos de maquillaje en tonos suaves"
+    >
+  </div>
+
+  <div class="container hero__content">
+    <h1 class="hero__title">Nuestra Tienda</h1>
+    <p class="hero__subtitle">Explora productos diseñados para todas las identidades</p>
+    <a class="btn btn--accent" href="#productos">Ver productos</a>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<!-- CATEGORÍAS -->
+<section id="categorias" class="shop-categories" aria-labelledby="cat-title">
+  <div class="container">
+    <h2 id="cat-title" class="shop__title">Categorías</h2>
+
+    <div class="cat-grid">
+      <a class="cat-card" href="#productos">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_labios.jpg') }}" alt="Labios">
+        </div>
+        <span class="cat-label">Labios</span>
+      </a>
+
+      <a class="cat-card" href="#productos">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_ojos.jpg') }}" alt="Ojos">
+        </div>
+        <span class="cat-label">Ojos</span>
+      </a>
+
+      <a class="cat-card" href="#productos">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_cremas.jpg') }}" alt="Cremas">
+        </div>
+        <span class="cat-label">Cremas</span>
+      </a>
+
+      <a class="cat-card" href="#productos">
+        <div class="cat-thumb">
+          <img src="{{ url_for('static', filename='img/categoria_polvos.jpg') }}" alt="Polvos">
+        </div>
+        <span class="cat-label">Polvos</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="products-section" aria-labelledby="products-title">
+  <div class="container">
+    <h2 id="products-title" class="shop__title">Nuestros productos</h2>
+
+    <div class="products-grid">
+      {% for p in products %}
+      <article class="product-card">
+        <div class="product-media">
+          <img src="{{ url_for('static', filename=p.img) }}" alt="{{ p.name }}">
+        </div>
+
+        <h3 class="product-title">{{ p.name }}</h3>
+
+        <div class="product-meta">
+          <div class="price-wrap">
+            <span class="price">
+              ${{ "{:,.0f}".format(p.price).replace(",", ".") }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Aún no hay carrito, solo botón visual -->
+        <a href="{{ url_for('add_to_cart', id=p.id) }}" class="btn btn--accent btn--wide">
+            Agregar al carrito
+        </a>
+
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

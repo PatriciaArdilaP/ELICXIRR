@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Maquillaje sin género{% endblock %}</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+  <!-- Enlace accesibilidad -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="{{ url_for('home') }}" class="brand">
+        <img class="brand__logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logotipo Maquillaje sin género">
+        <span class="brand__name">Maquillaje sin género</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+        <ul class="nav__list" id="nav-menu">
+            <li><a class="nav__link" href="{{ url_for('home') }}">Inicio</a></li>
+            <li><a class="nav__link" href="{{ url_for('tienda') }}">Tienda</a></li>
+            <li><a class="nav__link" href="{{ url_for('home') }}#aprender">Artículos</a></li>
+            <li><a class="nav__link" href="{{ url_for('home') }}#equipo">Equipo</a></li>
+            <li><a class="nav__link" href="{{ url_for('home') }}#faq">FAQ</a></li>
+            <li class="nav__cart">
+            <a href="{{ url_for('cart') }}" class="cart-link" title="Ver carrito">
+                🛒 <span id="cart-count">{{ session.get('cart', [])|length }}</span>
+            </a>
+            </li>
+        </ul>
+    </nav>
+
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  {% block hero %}{% endblock %}
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main id="contenido">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Columna 1 -->
+        <div class="footer__brand">
+          <a href="{{ url_for('home') }}" class="brand footer__brand-link">
+            <img class="brand__logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logotipo Maquillaje sin género">
+            <span class="brand__name">Maquillaje sin género</span>
+          </a>
+          <p class="footer__tagline">Belleza sin etiquetas: productos unisex y contenidos para todes.</p>
+        </div>
+
+        <!-- Columna 2 -->
+        <nav class="footer__nav">
+          <h3>Secciones</h3>
+          <ul>
+            <li><a href="{{ url_for('home') }}">Inicio</a></li>
+            <li><a href="{{ url_for('tienda') }}">Tienda</a></li>
+            <li><a href="{{ url_for('home') }}#aprender">Artículos</a></li>
+            <li><a href="{{ url_for('home') }}#equipo">Equipo</a></li>
+            <li><a href="{{ url_for('home') }}#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 3 -->
+        <div class="footer__contact">
+          <h3>Contacto</h3>
+          <p><a href="mailto:hola@msingenero.com">hola@msingenero.com</a></p>
+          <p><a href="tel:+573001112233">+57 300 111 2233</a></p>
+          <p>Bogotá, Colombia</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2025 Maquillaje sin género. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}Home • Maquillaje sin género{% endblock %}
+
+{% block hero %}
+<section class="hero" aria-label="Sección principal">
+  <!-- Imagen de portada -->
+  <div class="hero__media">
+    <img class="hero__img" src="{{ url_for('static', filename='img/articulo1.jpg') }}" 
+         alt="Persona aplicando maquillaje con brocha">
+  </div>
+
+  <!-- Contenido superpuesto -->
+  <div class="container hero__content">
+    <h1 class="hero__title">Maquillaje para todas las personas</h1>
+    <p class="hero__subtitle">
+      Belleza sin etiquetas: productos unisex y reflexiones sobre diversidad.
+    </p>
+
+    <div class="hero__actions">
+      <!-- Rutas seguras: solo usamos /tienda y anclas del propio Home -->
+      <a class="btn btn--primary" href="{{ url_for('tienda') }}">Explorar tienda</a>
+      <a class="btn btn--secondary" href="{{ url_for('home') }}#aprender">Leer artículos</a>
+      <a class="btn btn--ghost" href="{{ url_for('home') }}#equipo">Equipo</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<!-- ===== VALORES ===== -->
+<section class="values" id="valores" aria-labelledby="values-title">
+  <div class="container">
+    <h2 class="values__title" id="values-title">Nuestros valores</h2>
+    <div class="values__grid">
+      <article class="value-card">
+        <h3 class="value-card__title">Sin género</h3>
+        <p class="value-card__text">Productos diseñados para cualquier identidad</p>
+      </article>
+
+      <article class="value-card">
+        <h3 class="value-card__title">Ética</h3>
+        <p class="value-card__text">Uso de materiales sin crueldad animal</p>
+      </article>
+
+      <article class="value-card">
+        <h3 class="value-card__title">Educación</h3>
+        <p class="value-card__text">Queremos desmontar estereotipos</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" role="separator"></div>
+
+<!-- ===== PRODUCTOS ===== -->
+<section class="products" id="productos" aria-labelledby="products-title">
+  <div class="container">
+    <h2 class="products__title" id="products-title">
+      Maquillaje pensado para ti, sin Estereotipos
+    </h2>
+
+    <div class="products__grid">
+      <article class="product-card">
+        <div class="product-card__media">
+          <img class="product-card__img" src="{{ url_for('static', filename='img/labial.jpg') }}" 
+               alt="Labial neutro color rojo">
+        </div>
+        <h3 class="product-card__name">Labial neutro</h3>
+        <p class="product-card__price">$25.000</p>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img class="product-card__img" src="{{ url_for('static', filename='img/sombras.jpg') }}" 
+               alt="Paleta de sombras universales">
+        </div>
+        <h3 class="product-card__name">Sombras universales</h3>
+        <p class="product-card__price">$25.000</p>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__media">
+          <img class="product-card__img" src="{{ url_for('static', filename='img/Polvos.jpg') }}" 
+               alt="Polvos compactos tono universal">
+        </div>
+        <h3 class="product-card__name">Polvos compactos</h3>
+        <p class="product-card__price">$45.000</p>
+      </article>
+    </div>
+
+    <div class="products__cta">
+      <a class="btn btn--primary btn--wide" href="{{ url_for('tienda') }}">Ingresa a la tienda</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" role="separator"></div>
+
+<!-- ===== APRENDER ===== -->
+<section class="learn" id="aprender" aria-labelledby="learn-title">
+  <div class="container">
+    <h2 class="learn__title" id="learn-title">Aprender también es cuidarte</h2>
+    <div class="learn__grid">
+      <article class="learn-card">
+        <h3 class="learn-card__title">¿Qué significa maquillaje unisex?</h3>
+        <div class="learn-card__media">
+          <img class="learn-card__img" src="{{ url_for('static', filename='img/articulo2.jpg') }}" 
+               alt="Joven con maquillaje creativo en espacio público">
+        </div>
+        <p class="learn-card__intro">Un vistazo a cómo el maquillaje puede ser libre de etiquetas.</p>
+        <!-- Enlace interno seguro -->
+        <a class="learn-card__link" href="{{ url_for('home') }}#aprender">Leer más +</a>
+      </article>
+
+      <article class="learn-card">
+        <h3 class="learn-card__title">Lenguaje inclusivo en la belleza cotidiana</h3>
+        <div class="learn-card__media">
+          <img class="learn-card__img" src="{{ url_for('static', filename='img/articulo3.jpg') }}" 
+               alt="Persona aplicando rímel frente a fondo rosa">
+        </div>
+        <p class="learn-card__intro">Guía práctica para hablar y maquillar sin estereotipos.</p>
+        <!-- Enlace interno seguro -->
+        <a class="learn-card__link" href="{{ url_for('home') }}#aprender">Leer más +</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" role="separator"></div>
+
+<!-- ===== EQUIPO ===== -->
+<section class="team" id="equipo" aria-labelledby="team-title">
+  <div class="container">
+    <h2 class="team__title" id="team-title">Conoce el equipo</h2>
+    <ul class="team__grid">
+      <li class="teammate">
+        <figure class="teammate__figure">
+          <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona1.jpg') }}" alt="Camila Rodriguez sonriendo frente a un PC">
+        </figure>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Camila Rodriguez</a></h3>
+        <p class="teammate__fact">Arma PCs y ama los juegos retro 🎮</p>
+      </li>
+
+      <li class="teammate">
+        <figure class="teammate__figure">
+          <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona2.jpg') }}" alt="Paola Medina con maquillaje creativo">
+        </figure>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Paola Medina</a></h3>
+        <p class="teammate__fact">Barista y fotógrafa urbana ☕📷</p>
+      </li>
+
+      <li class="teammate">
+        <figure class="teammate__figure">
+          <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona3.jpg') }}" alt="Felipe Perez de brazos cruzados">
+        </figure>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Felipe Perez</a></h3>
+        <p class="teammate__fact">Corre trail y cuida refugios 🏔️🐾</p>
+      </li>
+
+      <li class="teammate">
+        <figure class="teammate__figure">
+          <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona3.jpg') }}" alt="Sonia Yepez con maquillaje y rímel">
+        </figure>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Sonia Yepez</a></h3>
+        <p class="teammate__fact">Cine club y drones los domingos 🎬🛸</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="section-sep" role="separator"></div>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <h2 class="faq__title" id="faq-title">Preguntas frecuentes</h2>
+    <div class="faq__list">
+      <details class="faq-item">
+        <summary class="faq-item__q">¿Cómo elijo mi tono?</summary>
+        <div class="faq-item__a">
+          Prueba el producto en la línea de la mandíbula y revisa con luz natural.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-item__q">¿Qué es “unisex” en cosmética?</summary>
+        <div class="faq-item__a">
+          Son productos diseñados para cualquier identidad. Elegimos por piel, no por género.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-item__q">Pagos y envíos</summary>
+        <div class="faq-item__a">
+          Aceptamos tarjetas y transferencias. Envíos a todo el país en 2–5 días hábiles.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-item__q">Devoluciones y cambios</summary>
+        <div class="faq-item__a">
+          Tienes 15 días para cambios por tono o defecto de fábrica.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
