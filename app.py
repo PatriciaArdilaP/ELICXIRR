@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-
+import os
 # Crear la aplicación Flask
 app = Flask(__name__)
-
+app.secret_key = os.environ.get("SECRET_KEY", "clave-dev")
 # Clave secreta (necesaria para manejar el carrito con sesiones)
-app.secret_key = "clave-super-secreta"
+
 
 # ------------------------
 # Catálogo de productos
