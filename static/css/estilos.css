@@ -1,8 +1,8 @@
 /* ===== Reset básico y variables ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root{
-  --pink: #f7d6d9;
-  --text: #111;
+  --pink: #c3c1d2;
+  --text: #000000;
   --text-soft: #2a2a2a;
   --white: #fff;
 }
@@ -990,4 +990,24 @@ ul {
     justify-content: center;
     gap: 18px;
   }
+}
+
+.confirm-check {
+  font-size: 3rem;
+  color: #0ea5a9;
+  border: 3px solid #0ea5a9;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  animation: popIn 0.5s ease forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
 }

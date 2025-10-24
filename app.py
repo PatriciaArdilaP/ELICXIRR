@@ -10,11 +10,11 @@ app.secret_key = "clave-super-secreta"
 # Catálogo de productos
 # ------------------------
 PRODUCTS = [
-    {"id": "p01", "name": "Flawless Foundation", "price": 39900, "img": "img/productos_tienda.jpg"},
-    {"id": "p02", "name": "Premium Gloss", "price": 25000, "img": "img/producto_labial1.jpg"},
+    {"id": "p01", "name": "Flawless Foundation", "price": 39900, "img" : "img/producto_inicial.jpg"},
+    {"id": "p02", "name": "Premium Gloss", "price": 25000, "img": "img/producto_labial2.jpg"},
     {"id": "p03", "name": "Active Shadow", "price": 29900, "img": "img/sombras.jpg"},
     {"id": "p04", "name": "Liquid Lip Gloss", "price": 22500, "img": "img/producto_labial1.jpg"},
-    {"id": "p05", "name": "Natural Cream", "price": 35000, "img": "img/productos_tienda.jpg"},
+    {"id": "p05", "name": "Natural Cream", "price": 35000, "img": "img/producto_rubor.jpg"},
     {"id": "p06", "name": "Lipstick Duo", "price": 28900, "img": "img/producto_labial1.jpg"},
     {"id": "p07", "name": "Gold Shadow", "price": 31500, "img": "img/sombras.jpg"},
     {"id": "p08", "name": "Brillo Gloss", "price": 24900, "img": "img/producto_brillo1.jpg"},

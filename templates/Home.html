@@ -12,14 +12,15 @@
 
   <!-- Contenido superpuesto -->
   <div class="container hero__content">
-    <h1 class="hero__title">Maquillaje para todas las personas</h1>
+    <h1 class="hero__title">ELICXIR</h1>
     <p class="hero__subtitle">
-      Belleza sin etiquetas: productos unisex y reflexiones sobre diversidad.
+      "TU ESCENCIA NO TIENE GENERO, TU BELLEZA TAMPOCO".
     </p>
 
     <div class="hero__actions">
       <!-- Rutas seguras: solo usamos /tienda y anclas del propio Home -->
       <a class="btn btn--primary" href="{{ url_for('tienda') }}">Explorar tienda</a>
+
       <a class="btn btn--secondary" href="{{ url_for('home') }}#aprender">Leer artículos</a>
       <a class="btn btn--ghost" href="{{ url_for('home') }}#equipo">Equipo</a>
     </div>
@@ -35,18 +36,18 @@
     <h2 class="values__title" id="values-title">Nuestros valores</h2>
     <div class="values__grid">
       <article class="value-card">
-        <h3 class="value-card__title">Sin género</h3>
-        <p class="value-card__text">Productos diseñados para cualquier identidad</p>
+        <h3 class="value-card__title">EMPODERAMIENTO</h3>
+        <p class="value-card__text">Inspira que cada persona se sienta segura, libre de expresarase con maquillaje como forma de arte y autoexpresion  </p>
       </article>
 
       <article class="value-card">
-        <h3 class="value-card__title">Ética</h3>
-        <p class="value-card__text">Uso de materiales sin crueldad animal</p>
+        <h3 class="value-card__title">INCLUSIVIDAD</h3>
+        <p class="value-card__text">Crear productos que sirvan para todas las identidades de género, tonos de piel, tipos de piel y estilos personales.</p>
       </article>
 
       <article class="value-card">
-        <h3 class="value-card__title">Educación</h3>
-        <p class="value-card__text">Queremos desmontar estereotipos</p>
+        <h3 class="value-card__title">DIVERSIDAD Y RESPETO </h3>
+        <p class="value-card__text">Fomentar un ambiente interno inclusivo: diversidad cultural, de género, orientación sexual, origen</p>
       </article>
     </div>
   </div>
@@ -115,12 +116,12 @@
       </article>
 
       <article class="learn-card">
-        <h3 class="learn-card__title">Lenguaje inclusivo en la belleza cotidiana</h3>
+        <h3 class="learn-card__title">Maquillaje sin etiquetas</h3>
         <div class="learn-card__media">
           <img class="learn-card__img" src="{{ url_for('static', filename='img/articulo3.jpg') }}" 
                alt="Persona aplicando rímel frente a fondo rosa">
         </div>
-        <p class="learn-card__intro">Guía práctica para hablar y maquillar sin estereotipos.</p>
+        <p class="learn-card__intro">paso a paso para todxs.</p>
         <!-- Enlace interno seguro -->
         <a class="learn-card__link" href="{{ url_for('home') }}#aprender">Leer más +</a>
       </article>
@@ -139,32 +140,40 @@
         <figure class="teammate__figure">
           <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona1.jpg') }}" alt="Camila Rodriguez sonriendo frente a un PC">
         </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="#">Camila Rodriguez</a></h3>
-        <p class="teammate__fact">Arma PCs y ama los juegos retro 🎮</p>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Daniela Riaño</a></h3>
+        <p class="teammate__fact">Lidera y guia</p>
       </li>
 
       <li class="teammate">
         <figure class="teammate__figure">
           <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona2.jpg') }}" alt="Paola Medina con maquillaje creativo">
         </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="#">Paola Medina</a></h3>
-        <p class="teammate__fact">Barista y fotógrafa urbana ☕📷</p>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Kevin Galindo</a></h3>
+        <p class="teammate__fact">Encargado de la logistica y el marketing</p>
       </li>
 
       <li class="teammate">
         <figure class="teammate__figure">
           <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona3.jpg') }}" alt="Felipe Perez de brazos cruzados">
         </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="#">Felipe Perez</a></h3>
-        <p class="teammate__fact">Corre trail y cuida refugios 🏔️🐾</p>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Karen Araque </a></h3>
+        <p class="teammate__fact">Manager y diseñadora web</p>
       </li>
 
       <li class="teammate">
         <figure class="teammate__figure">
-          <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona3.jpg') }}" alt="Sonia Yepez con maquillaje y rímel">
+          <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona4.jpg') }}" alt="Sonia Yepez con maquillaje y rímel">
         </figure>
-        <h3 class="teammate__name"><a class="teammate__link" href="#">Sonia Yepez</a></h3>
-        <p class="teammate__fact">Cine club y drones los domingos 🎬🛸</p>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Joel Avila</a></h3>
+        <p class="teammate__fact">Fotografo y diseñador grafico</p>
+      </li>
+
+       <li class="teammate">
+        <figure class="teammate__figure">
+          <img class="teammate__avatar" src="{{ url_for('static', filename='img/persona5.jpg') }}" alt="Sonia Yepez con maquillaje y rímel">
+        </figure>
+        <h3 class="teammate__name"><a class="teammate__link" href="#">Juana Correa</a></h3>
+        <p class="teammate__fact">Servicio al cliente y redactora de contenido</p>
       </li>
     </ul>
   </div>
